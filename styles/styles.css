@@ -1,0 +1,269 @@
+/******************************************
+    CSSS RESET + Footer Fix
+*******************************************/
+
+
+/*Linked to CSS reset and a footer fix to minimize the code*/
+
+@import url("cssReset.css");
+@import url("footer.css");
+
+/********************************************
+    HEADER/FOOTER
+*********************************************/
+
+#header {
+	background: black;
+	border-bottom: 2px solid blue;
+	height: 80px;
+	padding:0 5%;
+}
+
+#header img {
+	float: right;
+	height: 80px;
+	padding: 5px;
+}
+
+h1 {
+	font-size: 25px;
+}
+
+h1,
+h2 {
+	font-family: federant, serif;
+	color: white;
+	padding: 8px;
+	width: 90%;
+}
+
+
+/*nav off to the right side*/
+
+nav ul {
+	display: flex;
+	justify-content: flex-end;
+	background: #3b3b3b;
+	margin-bottom: 30px;
+	padding: 5px;
+}
+
+li a {
+	margin: 0 10px;
+	color: #c9c9c9;
+	font-size: 18px;
+	font-family: germania-one
+}
+
+li a:hover {
+	color: white;
+	text-decoration: none;
+	border-bottom: 5px solid white;
+	border-top: 5px solid white;
+	transition: 100ms;
+}
+
+
+/********************************************
+    CONTENT
+*********************************************/
+
+
+/*made the scrollbar stay visible so the page doesnt jump around when images are clicked*/
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	background: #1d1d4b
+}
+
+#gallery {
+	width: 80%;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-bottom: 40px;
+}
+
+#gallery img {
+	display: inline-block;
+	width: calc(20% - 6px);
+	margin: 0 1px;
+	cursor: pointer;
+}
+
+#wrapper>hr {
+	margin-top: 10vh;
+}
+
+hr {
+	width: 70%;
+	max-width: 900px;
+	border-bottom: 1px solid #0031ff;
+}
+
+
+/********************************************
+    Overlay
+*********************************************/
+
+#overlay {
+	display: none;
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+div #large {
+	display: block;
+	position: relative;
+	top: 10%;
+	z-index: 4;
+	width: 90%;
+	max-width: 2000px;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+#wrapper {
+	z-index: 1;
+}
+
+#frame {
+	width: 70%;
+	float: left;
+}
+
+#bigpic img {
+	width: 100%;
+	box-shadow: 0 5px 10px black;
+}
+
+#back,
+#next {
+	width: 5%;
+	margin-top: 20%;
+	float: left;
+}
+
+#back {
+	margin-left: 8%;
+	margin-right: 1%;
+}
+
+#next {
+	margin-left: 1%;
+}
+
+#back li,
+#next li {
+	width: 100%;
+	list-style: none;
+	cursor: pointer;
+}
+
+
+/*animated buttons*/
+
+#back li:hover {
+	-webkit-animation: goBack 5s infinite;
+	animation: goBack 350ms infinite;
+}
+
+@-webkit-keyframes goBack {
+	50% {
+		transform: translateX(-5px);
+	}
+}
+
+#next li:hover {
+	-webkit-animation: goNext 5s infinite;
+	animation: goNext 350ms infinite;
+}
+
+@-webkit-keyframes goNext {
+	50% {
+		transform: translateX(5px);
+	}
+}
+
+#back img,
+#next img {
+	width: 100%;
+}
+
+
+/*clickable background in overlay to close it*/
+
+#close {
+	display: block;
+	z-index: 3;
+	background: rgba(0, 4, 31, 0.79);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+
+
+/********************************************
+    Media Queries
+*********************************************/
+
+@media screen and (max-width:960px) {
+	/*#picbar{
+		display:none
+	}*/
+	/*locks image wheel onto screen visibly*/
+	#overlay {
+		position: static;
+		z-index: 0;
+	}
+	div #large {
+		width: 100%;
+	}
+	#back,
+	#next {
+		width: 8%;
+		margin: 0;
+		padding-top: 20%;
+		float: left;
+		margin-bottom: 25%;
+	}
+	#back {
+		margin-left: 2%;
+		margin-right: 1%;
+	}
+	#next {
+		margin-left: 1%;
+		margin-right: 2%;
+	}
+	#frame {
+		width: 78%;
+	}
+	div #content {
+		padding-bottom: 0;
+	}
+	html {
+		overflow-y: auto;
+	}
+	#gallery {
+		width: 100%;
+	}
+	#gallery img {
+		width: 31%;
+		padding-left: 3%;
+		cursor: pointer;
+	}
+	#back li:hover {
+		animation: none;
+	}
+	#next li:hover {
+		animation: none;
+	}
+}

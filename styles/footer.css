@@ -1,0 +1,33 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+#header {
+	background: #ededed;
+}
+
+#content {
+	padding-bottom: 40px;
+	/* Height of the footer element */
+}
+
+#footer {
+	background: #3b3b3b;
+	width: 100%;
+	height: 40px;
+	padding: 10px;
+	margin-bottom: -20px;
+	position: absolute;
+	bottom: 0;
+	text-align: right;
+	color: #c9c9c9;
+	font-family: germania-one;
+}
