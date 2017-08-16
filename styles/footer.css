@@ -11,11 +11,10 @@ body {
 }
 
 #header {
-	background: #ededed;
 }
 
 #content {
-	padding-bottom: 40px;
+	padding-bottom: 50px;
 	/* Height of the footer element */
 }
 
@@ -24,7 +23,6 @@ body {
 	width: 100%;
 	height: 40px;
 	padding: 10px;
-	margin-bottom: -20px;
 	position: absolute;
 	bottom: 0;
 	text-align: right;
